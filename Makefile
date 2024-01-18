@@ -35,7 +35,7 @@ src:
 html: $(TEX)
 	pandoc book.tex \
 			--from latex --citeproc -M link-citations=true \
-			-M lang=en \
+			-M lang=en -H style.html \
 			--toc -s --number-sections --section-divs \
 			--lua-filter indexer.lua \
 			--lua-filter pdf2svg.lua --lua-filter latex_code2line.lua \
@@ -44,7 +44,7 @@ html: $(TEX)
 html-local: $(TEX)
 	pandoc book.tex \
 			--from latex --citeproc -M link-citations=true \
-			-M lang=en \
+			-M lang=en -H style.html \
 			--toc -s --number-sections --section-divs \
 			--lua-filter indexer.lua \
 			--lua-filter pdf2svg.lua --lua-filter local-link.lua \
