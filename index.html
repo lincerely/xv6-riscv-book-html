@@ -254,10 +254,38 @@
       margin-left: 2em;
     }  </style>
   <style>
-  	/* overrides pandoc default style */
-  	body {
-  		hyphens: manual;
+  /* overrides pandoc default style */
+  body {
+  	hyphens: manual;
+  }
+
+  /* dark mode, ref: https://github.com/jgm/pandoc/pull/7226/files */
+  @media screen and (prefers-color-scheme: dark) {
+  	html {
+  		color: #d3d3d3;
+  		background-color: #101010;
   	}
+  	a, a:visited {
+  		color: #d3d3d3;
+  	}
+  	blockquote {
+  		border-color: #707070;
+  		color: #d3d3d3;
+  	}
+  	hr {
+  		background-color: #d3d3d3;
+  	}
+  	tbody, th {
+  		border-color: #d3d3d3;
+  	}
+  	div.sourceCode {
+  		filter: invert(1);
+  		color: initial;
+  	}
+  	img {
+  		filter: invert(1);
+  	}
+  }
   </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
